@@ -1,3 +1,16 @@
+export type BlogBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "image"; src: string; alt?: string; caption?: string };
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  slug: string;
+  date: string;
+  excerpt: string;
+  content: BlogBlock[];
+}
+
 export const navigationItems = [
   {
     label: "Projects",
@@ -50,6 +63,16 @@ export const pagesData = {
           "Cr4ck is an AI-powered coding challenge platform built for developers who want to go beyond syntax and actually think in systems. Most coding platforms test whether you can solve a problem. Cr4ck asks how well you designed the solution — your object relationships, your abstractions, your architecture.",
         tags: ["Angular", "PostgreSQL", "Supabase", "TypeScript", "Fastapi"],
       },
+      {
+        id: 3,
+        title: "Atxmega128A1U Labs",
+        image: "/projects/microp.png",
+        startDate: "May 2026",
+        endDate: "August 2026",
+        description:
+          "Completed Several Labs work including DMA, USART, DAC, ADC, Timer, and General Purpose I/O for Atxmega128A1U Microcontroller. The labs are designed to provide hands-on experience with the microcontroller's features and capabilities.",
+        tags: ["C", "Embedded Systems", "AVR"],
+      },
     ],
   },
   blog: {
@@ -59,28 +82,22 @@ export const pagesData = {
     items: [
       {
         id: 1,
-        title: "Stop using ai for your own idea or thinking",
+        title: "Stop Using AI for Your Own Idea or Thinking",
         slug: "stop-using-ai-for-your-own-idea-or-thinking",
         date: "Aug 26, 2026",
-        excerpt: "A comprehensive guide to building applications with React.",
-        content:
-          "This is a placeholder for the full blog post. Content coming soon...",
+        excerpt: "Human thinking is very sacred",
+        content: [
+          {
+            type: "paragraph",
+            text: "Recently, I have been playing with my mind for a bit. I just found that it is not a very bad place to play with. It is so powerful that you can control what you think and hence control what you do.",
+          },
+        ],
       },
-      {
-        id: 2,
-        title: "Next.js Best Practices",
-        slug: "nextjs-best-practices",
-        date: "December 15, 2023",
-        excerpt:
-          "Learn the best practices for building scalable Next.js applications.",
-        content:
-          "This is a placeholder for the full blog post. Content coming soon...",
-      },
-    ],
+    ] as BlogPost[],
   },
   gallery: {
     title: "Gallery",
-    subtitle: "Visual showcase of my work",
+    subtitle: "Visual Pictures of My Life",
     type: "grid",
     items: [
       {

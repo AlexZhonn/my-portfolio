@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { pagesData } from "@/app/data";
+import { pagesData, type BlogBlock } from "@/app/data";
 import { notFound } from "next/navigation";
 import SnowBackground from "@/app/components/SnowBackground";
 
@@ -53,8 +53,25 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="text-gray-500 text-sm">Published on {post.date}</p>
           </header>
 
-          <div className="text-gray-300 leading-relaxed">
-            <p>{post.content}</p>
+          <div className="text-gray-300 leading-relaxed flex flex-col gap-6">
+            {post.content.map((block, index) =>
+              block.type === "paragraph" ? (
+                <p key={index}>{block.text}</p>
+              ) : (
+                <figure key={index} className="my-2">
+                  <img
+                    src={block.src}
+                    alt={block.alt ?? ""}
+                    className="rounded-lg w-full"
+                  />
+                  {block.caption && (
+                    <figcaption className="text-gray-500 text-sm mt-2 text-center">
+                      {block.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              )
+            )}
           </div>
         </article>
       </main>
