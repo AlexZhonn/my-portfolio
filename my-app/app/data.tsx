@@ -89,7 +89,8 @@ export const pagesData = {
         content: [
           {
             type: "paragraph",
-            text: "Recently, I have been playing with my mind for a bit. I just found that it is not a very bad place to play with. It is so powerful that you can control what you think and hence control what you do.",
+            // text: "Recently, I have been playing with my mind for a bit. I just found that it is not a very bad place to play with. It is so powerful that you can control what you think and hence control what you do.",
+            text: "still writing it",
           },
         ],
       },
