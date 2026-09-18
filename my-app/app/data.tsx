@@ -103,13 +103,11 @@ export const pagesData = {
     items: [
       {
         id: 1,
-        title: "Image One",
+        title: "CSA NSW Worship Subtle Voice & Holy Forever",
+        description:
+          "First time playing guitar and sharing God’s grace in front of 100+ people with my buddy! So grateful for this opportunity to serve God through music, and excited to see what He has in store next. 🙌🎸",
         category: "Design",
-      },
-      {
-        id: 2,
-        title: "Image Two",
-        category: "Photography",
+        path: "/gallery/CSA_NSW_GUITAR.JPG",
       },
     ],
   },

@@ -71,35 +71,24 @@ export default async function Page({ params }: Props) {
             </div>
           )}
 
-          {page.type === "grid" &&
-            slug !== "projects" &&
-            slug !== "experience" && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                {page.items?.map((item: any) => (
-                  <div
-                    key={item.id}
-                    className="group relative p-6 rounded-lg border border-gray-700 hover:border-gray-500 transition-all duration-300 bg-gray-900/30 hover:bg-gray-900/50"
-                  >
-                    <h3 className="text-xl font-semibold text-gray-100 mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-400 mb-4">
-                      {item.description || item.category}
-                    </p>
-                    <div className="flex gap-2">
-                      {item.tags?.map((tag: string) => (
-                        <span
-                          key={tag}
-                          className="inline-block px-3 py-1 text-sm text-gray-400 bg-gray-800 rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+          {page.type === "grid" && slug === "gallery" && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+              {page.items?.map((item: any) => (
+                <div
+                  key={item.id}
+                  className="group relative p-6 rounded-lg border border-gray-700 hover:border-gray-500 transition-all duration-300 bg-gray-900/30 hover:bg-gray-900/50"
+                >
+                  <h3 className="text-xl font-semibold text-gray-100 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-400 mb-4">
+                    {item.description || item.category}
+                  </p>
+                  {item.path && <img src={item.path} alt="" />}
+                </div>
+              ))}
+            </div>
+          )}
 
           {page.type === "list" && (
             <div className="flex flex-col w-full gap-4">
