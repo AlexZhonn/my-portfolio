@@ -1,24 +1,11 @@
-export type BlogBlock =
-  | { type: "paragraph"; text: string }
-  | { type: "image"; src: string; alt?: string; caption?: string };
-
-export interface BlogPost {
-  id: number;
-  title: string;
-  slug: string;
-  date: string;
-  excerpt: string;
-  content: BlogBlock[];
-}
-
 export const navigationItems = [
   {
-    label: "Projects",
-    href: "/pages/projects",
+    label: "Software Projects",
+    href: "/pages/software-projects",
   },
   {
-    label: "Blog",
-    href: "/pages/blog",
+    label: "Hardware Projects",
+    href: "/pages/hardware-projects",
   },
   {
     label: "Gallery",
@@ -31,9 +18,9 @@ export const navigationItems = [
 ];
 
 export const pagesData = {
-  projects: {
-    title: "Projects",
-    subtitle: "Explore my work and creations",
+  "software-projects": {
+    title: "Software Projects",
+    subtitle: "Web applications and software systems",
     type: "grid",
     items: [
       {
@@ -44,7 +31,7 @@ export const pagesData = {
         startDate: "June 2026",
         endDate: "Present",
         description:
-          "A website for Gainesville Chinese Christian Church using 'Payload' as Content Management System. Its goal is to enable non-developer to control the content of the website easily without even write one line of code",
+          "A website for Gainesville Chinese Christian Church built with Next.js and Payload CMS, enabling non-technical staff to update content without writing code.",
         tags: [
           "Next.js",
           "React",
@@ -57,48 +44,34 @@ export const pagesData = {
         id: 2,
         title: "Cr4ck",
         image: "/projects/cr4ck.jpeg",
-        startDate: "Apr 2026",
+        startDate: "April 2026",
         endDate: "Present",
         description:
           "Cr4ck is an AI-powered coding challenge platform built for developers who want to go beyond syntax and actually think in systems. Most coding platforms test whether you can solve a problem. Cr4ck asks how well you designed the solution — your object relationships, your abstractions, your architecture.",
-        tags: ["Angular", "PostgreSQL", "Supabase", "TypeScript", "Fastapi"],
+        tags: ["Angular", "PostgreSQL", "Supabase", "TypeScript", "FastAPI"],
       },
+    ],
+  },
+  "hardware-projects": {
+    title: "Hardware Projects",
+    subtitle: "Microcontrollers and embedded systems",
+    type: "grid",
+    items: [
       {
         id: 3,
-        title: "Atxmega128A1U Labs",
+        title: "ATxmega128A1U Labs",
         image: "/projects/microp.png",
         startDate: "May 2026",
         endDate: "August 2026",
         description:
-          "Completed Several Labs work including DMA, USART, DAC, ADC, Timer, and General Purpose I/O for Atxmega128A1U Microcontroller. The labs are designed to provide hands-on experience with the microcontroller's features and capabilities.",
+          "Hands-on labs using the ATxmega128A1U microcontroller, covering DMA, USART, DAC, ADC, timers, and general-purpose I/O. Developed embedded C programs to explore peripheral control and hardware interfaces.",
         tags: ["C", "Embedded Systems", "AVR"],
       },
     ],
   },
-  blog: {
-    title: "Blog",
-    subtitle: "Thoughts, tutorials, and insights",
-    type: "list",
-    items: [
-      {
-        id: 1,
-        title: "Stop Using AI for Your Own Idea or Thinking",
-        slug: "stop-using-ai-for-your-own-idea-or-thinking",
-        date: "Aug 26, 2026",
-        excerpt: "Human thinking is very sacred",
-        content: [
-          {
-            type: "paragraph",
-            // text: "Recently, I have been playing with my mind for a bit. I just found that it is not a very bad place to play with. It is so powerful that you can control what you think and hence control what you do.",
-            text: "still writing it",
-          },
-        ],
-      },
-    ] as BlogPost[],
-  },
   gallery: {
     title: "Gallery",
-    subtitle: "Visual Pictures of My Life",
+    subtitle: "Snapshots of my life",
     type: "grid",
     items: [
       {
@@ -141,9 +114,9 @@ export const pagesData = {
         tags: [
           "C++",
           "Python",
-          "ROS2",
+          "ROS 2",
           "Embedded Systems",
-          "Mathworks",
+          "MathWorks",
           "Blender",
         ],
       },

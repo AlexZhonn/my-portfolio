@@ -48,7 +48,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           }}
         />
 
-        <div className="relative flex items-start gap-6">
+        <div className="relative flex flex-col items-start gap-6 sm:flex-row">
           {/* Left Content */}
           <div className="flex-1 min-w-0">
             <h3 className="text-xl font-bold text-white mb-2">
@@ -73,7 +73,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Right Image */}
           {project.image && (
-            <div className="shrink-0 w-48 rounded-lg overflow-hidden">
+            <div className="shrink-0 w-full sm:w-48 rounded-lg overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -100,7 +100,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               background: "linear-gradient(180deg, #150D20, #07101F)",
             }}
           >
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <p className="text-gray-500 text-sm flex-1">
                 {project.description}
               </p>

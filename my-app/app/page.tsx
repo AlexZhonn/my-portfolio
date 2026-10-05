@@ -50,12 +50,12 @@ export default function Home() {
         </div>
 
         {/* Navigation — river effect from left to right */}
-        <nav className="flex gap-8 md:gap-12 -mt-8">
+        <nav className="flex flex-wrap justify-center gap-x-2 gap-y-1 md:gap-x-8 -mt-8 px-4">
           {navigationItems.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}
-              className="relative px-6 py-3 text-lg font-medium text-gray-400 hover:text-gray-200 transition-all duration-300 group pointer-events-auto"
+              className="relative px-3 py-3 text-base sm:text-lg font-medium text-gray-400 hover:text-gray-200 transition-all duration-300 group pointer-events-auto"
               style={{
                 opacity: navReady ? 1 : 0,
                 transform: navReady

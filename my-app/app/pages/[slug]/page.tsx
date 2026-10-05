@@ -52,7 +52,7 @@ export default async function Page({ params }: Props) {
         <div className="flex flex-col items-center w-full max-w-4xl mx-auto px-4 gap-8">
           {/* Header */}
           <div className="flex flex-col items-center gap-4">
-            <h1 className="text-6xl md:text-6xl font-impact uppercase text-gray-100">
+            <h1 className="text-4xl text-center sm:text-6xl font-impact uppercase text-gray-100">
               {page.title}
             </h1>
             <p className="text-gray-400 text-lg italic">{page.subtitle}</p>
@@ -60,20 +60,20 @@ export default async function Page({ params }: Props) {
 
           {/* Dynamic Content Based on Page Type */}
           {slug === "experience" && (
-            <ExperienceTimeline items={page.items as any} />
+            <ExperienceTimeline items={pagesData.experience.items} />
           )}
 
-          {slug === "projects" && (
-            <div className="flex flex-col w-full gap-4">
-              {page.items?.map((item: any) => (
-                <ProjectCard key={item.id} project={item} />
+          {(slug === "software-projects" || slug === "hardware-projects") && (
+            <div className="flex flex-col w-full gap-4 pb-16">
+              {pagesData[slug].items.map((project) => (
+                <ProjectCard key={project.id} project={project} />
               ))}
             </div>
           )}
 
           {page.type === "grid" && slug === "gallery" && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-              {page.items?.map((item: any) => (
+              {pagesData.gallery.items.map((item) => (
                 <div
                   key={item.id}
                   className="group relative p-6 rounded-lg border border-gray-700 hover:border-gray-500 transition-all duration-300 bg-gray-900/30 hover:bg-gray-900/50"
@@ -86,31 +86,6 @@ export default async function Page({ params }: Props) {
                   </p>
                   {item.path && <img src={item.path} alt="" />}
                 </div>
-              ))}
-            </div>
-          )}
-
-          {page.type === "list" && (
-            <div className="flex flex-col w-full gap-4">
-              {page.items?.map((item: any) => (
-                <article
-                  key={item.id}
-                  className="flex flex-col group p-6 rounded-lg border border-gray-700 hover:border-gray-500 transition-all duration-300 bg-gray-900/30 hover:bg-gray-900/50"
-                >
-                  <h3 className="text-2xl font-semibold text-gray-100 mb-2 group-hover:text-gray-50 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-3">
-                    Published on {item.date}
-                  </p>
-                  <p className="text-gray-400 mb-4">{item.excerpt}</p>
-                  <Link
-                    href={`/pages/blog/${item.slug}`}
-                    className="text-blue-400 self-end hover:text-blue-300 transition-colors duration-300"
-                  >
-                    Read more →
-                  </Link>
-                </article>
               ))}
             </div>
           )}
