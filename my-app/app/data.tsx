@@ -1,5 +1,9 @@
 export const navigationItems = [
   {
+    label: "About me",
+    href: "/pages/about-me",
+  },
+  {
     label: "Software Projects",
     href: "/pages/software-projects",
   },
@@ -18,10 +22,20 @@ export const navigationItems = [
 ];
 
 export const pagesData = {
+  "about-me": {
+    title: "About me",
+    subtitle: "Curiosity, ownership, and a competitive streak",
+    paragraphs: [
+      "My interest in computers started in an unusual place: Counter-Strike. I loved playing, but I was just as fascinated by the console: memorizing commands, tweaking settings, and putting my character’s arms at ridiculously weird angles just because I could. Somewhere along the way, that curiosity about making things behave differently turned into a love for building things myself.",
+      "Today, I’m a Computer Engineering student at the University of Florida who enjoys both hardware and software. From autonomous underwater vehicles at UF’s Machine Intelligence Lab to backend systems at Kogna AI, I’m happiest when I’m building something people can actually use and figuring out something I haven’t built before.",
+      "The quality I value most in myself is ownership. When I take responsibility for something, I care about the outcome, beyond simply finishing my part. I want to understand the problem, see it through, and be someone my teammates can count on. That same mindset shapes how I build: start with the people who will use it, understand what they need, and keep improving until it works for them.",
+      "Before engineering became my main focus, I seriously considered competitive esports. I reached the top 1,000 in Valorant, the top 300 in CS:GO, and the top 10 in NBA 2K Play Now. That competitive side is still very much part of me, along with the drive to practice, learn, and get better.",
+      "Outside of engineering, you’ll usually find me playing guitar with my worship team, serving my community, or at the gym. Whether I’m working on a project or making music with others, I enjoy being part of something that brings people together.",
+    ],
+  },
   "software-projects": {
     title: "Software Projects",
     subtitle: "Web applications and software systems",
-    type: "grid",
     items: [
       {
         id: 1,
@@ -65,7 +79,6 @@ export const pagesData = {
   "hardware-projects": {
     title: "Hardware Projects",
     subtitle: "Microcontrollers and embedded systems",
-    type: "grid",
     items: [
       {
         id: 3,
@@ -82,7 +95,6 @@ export const pagesData = {
   gallery: {
     title: "Gallery",
     subtitle: "Snapshots of my life",
-    type: "grid",
     items: [
       {
         id: 1,
@@ -97,7 +109,6 @@ export const pagesData = {
   experience: {
     title: "Experience",
     subtitle: "My professional journey",
-    type: "timeline",
     items: [
       {
         id: 1,
