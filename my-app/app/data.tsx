@@ -50,6 +50,16 @@ export const pagesData = {
           "Cr4ck is an AI-powered coding challenge platform built for developers who want to go beyond syntax and actually think in systems. Most coding platforms test whether you can solve a problem. Cr4ck asks how well you designed the solution — your object relationships, your abstractions, your architecture.",
         tags: ["Angular", "PostgreSQL", "Supabase", "TypeScript", "FastAPI"],
       },
+      {
+        id: 3,
+        title: "Palettle",
+        image: "/projects/palettle.png",
+        startDate: "Oct 2026",
+        endDate: "Present",
+        description:
+          "Palettle is a puzzle game that user needs to guess the each of the RGB value of a Color [Coding Without AI]",
+        tags: ["Express", "React", "JavaScript"],
+      },
     ],
   },
   "hardware-projects": {
